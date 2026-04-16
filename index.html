@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>イベント名 | 開催日・開催地</title>
+
+  <!-- ★ Issue #1: イベント名に変更する -->
+  <title>宇宙展 | 2026年 8/1～8/15・ 横浜 みなとみらい</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +14,9 @@
   <!-- ナビゲーション -->
   <header class="site-header">
     <div class="header-inner">
-      <span class="logo">EVENT NAME</span>
+
+      <!-- ★ Issue #1: イベント名に変更 -->
+      <span class="logo">宇宙展</span>
       <nav class="site-nav">
         <ul>
           <li><a href="#about">概要</a></li>
@@ -27,9 +32,12 @@
     <!-- ヒーローセクション -->
     <section id="hero" class="hero">
       <div class="hero-inner">
-        <p class="hero-eyebrow">2026.08.01 sat - sun</p>
-        <h1 class="hero-title">イベント名をここに入れよう</h1>
-        <p class="hero-catch">キャッチコピーをここに記入してください</p>
+
+        <!-- ★ Issue #1: イベント名に変更 -->
+        <p class="hero-eyebrow">2026.08.01 sat — 2026.08.15 sat</p>
+        <h1 class="hero-title">宇宙展</h1>
+        <!-- ★ Issue #1: キャッチコピーに変更 -->
+        <p class="hero-catch">無重力を体験しよう</p>
         <a href="#about" class="btn btn-primary">詳しく見る</a>
       </div>
     </section>
@@ -37,31 +45,42 @@
     <!-- 概要セクション -->
     <section id="about" class="about">
       <div class="section-inner">
-        <h2 class="section-title">イベント概要3</h2>
+
+        <h2 class="section-title">イベント概要</h2>
+        <div class="about-grid">
 
         <div class="about-grid">
           <div class="about-card">
             <div class="about-icon">🗓️</div>
             <h3>開催日時</h3>
-            <p>2026年8月1日（土）〜8月2日（日）</p>
+
+            <!-- ★ Issue #2: 日時に変更 -->
+            <p>2026年8月1日(土)～15日(土)</p>
           </div>
 
           <div class="about-card">
             <div class="about-icon">📍</div>
             <h3>開催場所</h3>
             <p>みなとみらい21地区 臨港パーク周辺</p>
+
           </div>
 
           <div class="about-card">
             <div class="about-icon">🎫</div>
             <h3>入場料</h3>
-            <p>無料</p>
+
+            <!-- ★ Issue #2: 料金に変更 -->
+            <p>
+				一般チケット ¥2,000(税込)
+			</p>
           </div>
 
           <div class="about-card">
             <div class="about-icon">👥</div>
             <h3>定員</h3>
-            <p>先着順・自由参加</p>
+
+            <!-- ★ Issue #2: 定員に変更 -->
+            <p>150人</p>
           </div>
         </div>
       </div>
@@ -159,8 +178,9 @@
 
   <!-- フッター -->
   <footer class="site-footer">
-    <p class="footer-event-name">EVENT NAME</p>
-    <p>&copy; 2026 イベント実行委員会</p>
+    <!-- ★ Issue #1: イベント名・問い合わせ先に変更 -->
+    <p class="footer-event-name">宇宙展</p>
+    <p>&copy; 2026 宇宙展実行委員会</p>
   </footer>
 
   <script src="script.js"></script>
