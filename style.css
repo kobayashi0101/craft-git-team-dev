@@ -65,7 +65,7 @@ ul {
   top: 0;
   z-index: 100;
   background: var(--bg-white);
-  border-bottom: 2px solid var(--theme-color);
+  
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
@@ -104,10 +104,22 @@ ul {
 
 /* ============== ヒーロー ============== */
 .hero {
-  background: var(--theme-color);
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("https://dthezntil550i.cloudfront.net/x8/latest/x82010162319545120004106490/9efec170-bfa4-4f2b-ad48-26ea09e2f304.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: var(--bg-white);
   text-align: center;
   padding: 80px 24px;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-inner {
@@ -135,6 +147,8 @@ ul {
   opacity: 0.9;
   margin-bottom: 36px;
 }
+
+
 
 /* ============== セクション共通 ============== */
 .section-inner {
