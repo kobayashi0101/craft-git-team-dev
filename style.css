@@ -1,0 +1,260 @@
+/* ===================================================
+   架空イベント告知ページ CSS
+
+   ★ コンフリクット仕掛けポイント:
+      Issue #2（概要）と Issue #3（プログラム）が
+      --theme-color を別々の色に変更することで
+      マージ時にコンフリクットが発生します
+=================================================== */
+
+:root {
+  /* ★ Issue #2 と #3: チームカラーに変更する（コンフリクット仕掛け） */
+  --theme-color:   #e74c3c;
+  --theme-dark:    #c0392b;
+  --theme-light:   #fdecea;
+
+  --bg-white:      #ffffff;
+  --bg-gray:       #f5f5f5;
+  --text-main:     #222222;
+  --text-sub:      #666666;
+  --border:        #e0e0e0;
+
+  --max-width:     1000px;
+  --radius:        8px;
+}
+
+/* =============== リセット =============== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+  color: var(--text-main);
+  background: var(--bg-white);
+  line-height: 1.7;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* =============== ボタン =============== */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary {
+  background: var(--bg-white);
+  color: var(--theme-color);
+}
+.btn-primary:hover {
+  background: var(--theme-light);
+  transform: translateY(-2px);
+}
+
+/* =============== ヘッダー =============== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-white);
+  border-bottom: 2px solid var(--theme-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--theme-color);
+  letter-spacing: 0.08em;
+}
+.site-nav ul { display: flex; gap: 28px; }
+.site-nav a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  transition: color 0.2s;
+}
+.site-nav a:hover { color: var(--theme-color); }
+
+/* =============== ヒーロー =============== */
+.hero {
+  background: var(--theme-color);
+  color: var(--bg-white);
+  text-align: center;
+  padding: 80px 24px;
+}
+.hero-inner { max-width: var(--max-width); margin: 0 auto; }
+.hero-eyebrow {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.hero-catch {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 36px;
+}
+
+/* =============== セクション共通 =============== */
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--theme-color);
+  display: inline-block;
+  /* ブロック中央揃え */
+  display: block;
+}
+
+/* =============== 概要 =============== */
+.about {
+  padding: 64px 24px;
+  background: var(--bg-gray);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.about-card {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--theme-color);
+}
+.about-icon { font-size: 2rem; margin-bottom: 12px; }
+.about-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--theme-color);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.about-card p {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* =============== プログラム =============== */
+.program {
+  padding: 64px 24px;
+}
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.program-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.program-item:last-child { border-bottom: none; }
+.program-time {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--theme-color);
+  padding-top: 2px;
+}
+.program-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.program-desc { font-size: 0.9rem; color: var(--text-sub); }
+
+/* =============== アクセス =============== */
+.access {
+  padding: 64px 24px;
+  background: var(--bg-gray);
+}
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.access-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--theme-color);
+}
+.access-list { display: flex; flex-direction: column; gap: 12px; }
+.access-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.access-list li:last-child { border-bottom: none; }
+.access-label {
+  font-weight: 700;
+  min-width: 90px;
+  color: var(--text-sub);
+}
+.access-map-placeholder {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  border: 2px dashed var(--border);
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-sub);
+}
+.map-hint { font-size: 0.8rem; margin-top: 8px; }
+
+/* =============== フッター =============== */
+.site-footer {
+  background: var(--text-main);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 28px 24px;
+}
+.footer-event-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--bg-white);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+/* =============== レスポンシブ =============== */
+@media (max-width: 640px) {
+  .hero-title { font-size: 2rem; }
+  .access-grid { grid-template-columns: 1fr; }
+  .access-map-placeholder { display: none; }
+  .program-item { grid-template-columns: 72px 1fr; }
+}
